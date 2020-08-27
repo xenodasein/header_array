@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <HA_OutDir>$(SolutionDir)out\</HA_OutDir>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_PropertySheetDisplayName>ha_d64</_PropertySheetDisplayName>
+    <OutDir>$(HA_OutDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(OutDir)Intermediate</IntDir>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <EnableClangTidyCodeAnalysis>true</EnableClangTidyCodeAnalysis>
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>
+    </GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <ExpandAttributedSource />
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AssemblerOutput />
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <ClCompile />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <BrowseInformation />
+      <CompileAs>CompileAsC</CompileAs>
+      <ShowIncludes />
+      <UseFullPaths />
+      <OmitDefaultLibName>true</OmitDefaultLibName>
+      <ErrorReporting />
+      <SuppressStartupBanner />
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <TreatWarningAsError />
+      <DiagnosticsFormat>Caret</DiagnosticsFormat>
+      <SDLCheck>true</SDLCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization />
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed />
+      <EnableFiberSafeOptimizations />
+      <WholeProgramOptimization />
+      <UndefineAllPreprocessorDefinitions />
+      <IgnoreStandardIncludePath />
+      <PreprocessToFile />
+      <PreprocessSuppressLineNumbers />
+      <PreprocessKeepComments />
+      <MinimalRebuild />
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <SmallerTypeCheck>true</SmallerTypeCheck>
+      <StructMemberAlignment />
+      <EnableEnhancedInstructionSet />
+      <IntelJCCErratum />
+      <DisableLanguageExtensions>true</DisableLanguageExtensions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <TreatWChar_tAsBuiltInType />
+      <ForceConformanceInForLoopScope />
+      <PrecompiledHeader />
+      <PrecompiledHeaderFile />
+      <PrecompiledHeaderOutputFile />
+      <CallingConvention />
+      <EnforceTypeConversionRules>true</EnforceTypeConversionRules>
+      <FloatingPointModel />
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion)-$(ProjectName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <ShowProgress>LinkVerbose</ShowProgress>
+      <SuppressStartupBanner />
+      <AdditionalDependencies>kernel32.lib;ucrtd.lib;vcruntimed.lib;msvcrtd.lib;</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <AllowIsolation />
+      <EnableUAC />
+      <UACExecutionLevel />
+      <UACUIAccess />
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapExports>true</MapExports>
+      <TargetMachine />
+      <LinkErrorReporting />
+      <RandomizedBaseAddress />
+      <DataExecutionPrevention />
+      <Profile>true</Profile>
+      <TypeLibraryResourceID />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="HA_OutDir">
+      <Value>$(HA_OutDir)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
