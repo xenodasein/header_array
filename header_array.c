@@ -27,6 +27,18 @@ SOFTWARE.
 
 #include "header_array.h"
 
+#ifdef _WIN32
+
+#  define restrict __restrict
+#  define inline __inline
+
+#else
+
+#  define restrict
+#  define inline
+
+#endif
+
 #ifdef _WIN64
 #  define HA_X64
 #endif
@@ -217,15 +229,14 @@ ha_reallocate(void* restrict* const restrict ha_begin_ptr,
   return success;
 }
 
-#ifdef _WIN64
-#  undef HA_X64
-#endif
-
-#undef HA_ABORT_ON_FAIL
-
 #undef HA_BTH
 #undef HA_HTB
 #undef HA_CAPACITY
 #undef HA_SIZE
 #undef HA_CALCULATE_ALLOCATION_SIZE
 #undef HA_CALCULATE_CAPACITY
+
+#undef restrict
+#undef inline
+
+#undef HA_X64

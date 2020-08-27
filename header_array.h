@@ -27,8 +27,17 @@ SOFTWARE.
 
 #include <stddef.h>
 
-#define restrict __restrict
-#define inline __inline
+#ifdef _WIN32
+
+#  define restrict __restrict
+#  define inline __inline
+
+#else
+
+#  define restrict
+#  define inline
+
+#endif
 
 enum ha_bool
 {
@@ -93,5 +102,8 @@ ha_reserve(void* restrict* const restrict ha_begin,
   (ha_reserve((void* restrict* const restrict)(ha_begin_ptr), \
               sizeof **(ha_begin_ptr),                        \
               desired_capacity))
+
+#undef restrict
+#undef inline
 
 #endif

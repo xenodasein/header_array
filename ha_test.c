@@ -31,6 +31,18 @@ SOFTWARE.
 #include "header_array.c"
 #undef HA_ABORT_ON_FAIL
 
+#ifdef _WIN32
+
+#  define restrict __restrict
+#  define inline __inline
+
+#else
+
+#  define restrict
+#  define inline
+
+#endif
+
 struct third_kind
 {
   int x, x_square, x_cube;
